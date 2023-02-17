@@ -24,10 +24,14 @@ jobs:
       - name: Analysing the code with pylint
         run: |
           pylint --exit-zero --fail-under=6 application/ tests/
-      - name: execut tests
+      - name: execut pytests
         run: |
           python -m pytest
+      - name: execut coverage
+        run: |
           coverage run -m pytest --profile
-          ./tests/locust --config=tests/.locust.conf
+      - name: execut locust
+        run: |
+          locust -f tests/ --config=tests/.locust.conf
   
 
