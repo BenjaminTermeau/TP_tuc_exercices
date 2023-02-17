@@ -32,6 +32,6 @@ jobs:
           coverage run -m pytest --profile
       - name: Selenium
         run: |
-          python ./tests/selenium.py
+          python ./tests/test_selenium.py
   
 
