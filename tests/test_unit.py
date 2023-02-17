@@ -2,6 +2,7 @@ import math
 from fastapi.testclient import TestClient
 import pytest
 from application.main import app
+from application.test_selenium import get_site
 from random import randint
 client = TestClient(app)
 
@@ -20,3 +21,6 @@ def test_return_square_twice(number: int):
     response = client.get(f"/twice/{number}")
     assert response.status_code == 200
     assert response.json() == math.pow(number, 2)*2
+
+def test_selenium():
+    assert "test" == get_site()
