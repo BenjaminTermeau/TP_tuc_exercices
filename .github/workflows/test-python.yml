@@ -28,6 +28,6 @@ jobs:
         run: |
           python -m pytest
           coverage run -m pytest --profile
-          locust --config=tests/.locust.conf
+          ./tests/locust --config=tests/.locust.conf
   
 
