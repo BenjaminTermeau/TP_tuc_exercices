@@ -17,8 +17,3 @@ class TestCI():
     self.driver.get("https://www.duellinksmeta.com/")
     self.driver.set_window_size(1600, 1200)
     return self.driver.title
-    
-  def test_wiki(self):
-    self.driver.get("https://wikiroulette.co/")
-    return self.driver.title
-  

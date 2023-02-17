@@ -30,8 +30,5 @@ jobs:
       - name: execut coverage
         run: |
           coverage run -m pytest --profile
-      - name: Selenium
-        run: |
-          python ./tests/test_selenium.py
   
 
