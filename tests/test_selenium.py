@@ -1,10 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 class TestCI():
   def setup_method(self, method):
+    options = Options()
+    options.add_argument("--headless")
     self.driver = webdriver.Chrome()
-    self.vars = {}
+    self.verificationErrors = []
+    self.accept_next_alert = True
   
   def teardown_method(self, method):
     self.driver.quit()
